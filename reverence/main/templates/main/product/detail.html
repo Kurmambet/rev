@@ -12,14 +12,14 @@
             {% for image in clothing_item.images.all %}
                 <img src="{{ image.image.url }}" style="display: none;" alt="{{ clothing_item.name }}" class="detail-image" data-index="{{ forloop.counter0 }}">
             {% endfor %}
-            <div class="image-nav">
+            <div class="image-nav d-flex justify-content-between">
                 <button class="prev-btn">&lsaquo;</button>
                 <button class="next-btn">&rsaquo;</button>
             </div>
         </div>
 
         <div class="detail-description">
-            <h2>{{ clothing_item.name }}</h2>
+            <h2 class="text-uppercase">{{ clothing_item.name }}</h2>
             <h3 class="item-desc">{{ clothing_item.description|linebreaks }}</h3>
             <div class="sizes">
                 <p>Available sizes:
@@ -58,7 +58,7 @@
         </div>
     </div>
 
-    
+
     <script>
         const sizeItems = document.querySelectorAll('.size-name')
         const sizeDisplay = document.getElementById('size-disply')
